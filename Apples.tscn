@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://bwiqsm2mb2nem"]
+
+[ext_resource type="Texture2D" uid="uid://b5od8lro1g2y0" path="res://apple.png" id="1_5yra7"]
+[ext_resource type="Script" uid="uid://cxfm2ee04cect" path="res://apple.gd" id="2_vwpui"]
+[ext_resource type="Texture2D" uid="uid://cwwrh0ws1ntbb" path="res://wicker-basket.png" id="3_oev2v"]
+[ext_resource type="Script" uid="uid://cmdjvmwg63xsk" path="res://wicker_basket.gd" id="4_iim5l"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Apple" type="Sprite2D" parent="."]
+position = Vector2(570, 58.000008)
+scale = Vector2(0.21484375, 0.21484375)
+texture = ExtResource("1_5yra7")
+script = ExtResource("2_vwpui")
+
+[node name="WickerBasket" type="Sprite2D" parent="."]
+position = Vector2(557, 556)
+scale = Vector2(0.33203125, 0.33203125)
+texture = ExtResource("3_oev2v")
+script = ExtResource("4_iim5l")

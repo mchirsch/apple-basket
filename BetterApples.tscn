@@ -1,0 +1,53 @@
+[gd_scene load_steps=7 format=3 uid="uid://uhb5fh3cahju"]
+
+[ext_resource type="Script" uid="uid://bk1fkckd1wlru" path="res://better-basket.gd" id="1_jh2jp"]
+[ext_resource type="Texture2D" uid="uid://cwwrh0ws1ntbb" path="res://wicker-basket.png" id="2_fmegd"]
+[ext_resource type="Script" uid="uid://do4mhyp3jpo6m" path="res://better-apple.gd" id="3_uc65d"]
+[ext_resource type="Texture2D" uid="uid://b5od8lro1g2y0" path="res://apple.png" id="4_l6s4s"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jh2jp"]
+radius = 40.0
+height = 100.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fmegd"]
+radius = 23.194826
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Basket" type="Area2D" parent="."]
+position = Vector2(627, 593)
+script = ExtResource("1_jh2jp")
+
+[node name="Sprite2D" type="Sprite2D" parent="Basket"]
+position = Vector2(2.5, -0.5)
+scale = Vector2(0.20117189, 0.20117189)
+texture = ExtResource("2_fmegd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Basket"]
+position = Vector2(0, 1)
+shape = SubResource("CapsuleShape2D_jh2jp")
+
+[node name="Apple" type="CharacterBody2D" parent="."]
+position = Vector2(626, 26)
+script = ExtResource("3_uc65d")
+
+[node name="Sprite2D" type="Sprite2D" parent="Apple"]
+position = Vector2(1.499939, 1.4999695)
+scale = Vector2(0.10351564, 0.10351564)
+texture = ExtResource("4_l6s4s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Apple"]
+position = Vector2(1.5, 3.5000305)
+shape = SubResource("CircleShape2D_fmegd")
+
+[node name="ScoreLabel" type="Label" parent="."]
+offset_left = 82.0
+offset_top = 38.0
+offset_right = 184.0
+offset_bottom = 61.0
+theme_override_colors/font_color = Color(0.91764706, 0.25882354, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.75686276)
+theme_override_font_sizes/font_size = 48
+text = "Hello There!!!"
+
+[connection signal="body_entered" from="Basket" to="Basket" method="_on_body_entered"]
