@@ -17,3 +17,7 @@ func _on_body_entered(body: Node2D) -> void:
 	print("You're touching me!!!!!!")
 	score = score + 1 # score += 1
 	score_label.text = str(score)
+
+
+func _on_button_pressed() -> void:
+	print("button works.")
